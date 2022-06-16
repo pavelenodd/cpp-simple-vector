@@ -211,7 +211,7 @@ public:
     // Удаляет элемент вектора в указанной позиции
     Iterator Erase(ConstIterator pos) {
         assert (!IsEmpty());
-        assert (pos >= begin() && pos <= end());
+        assert (pos >= begin() && pos < end());
         auto dist = std::distance(cbegin(), pos);
         std::copy(std::make_move_iterator(begin() + dist + 1), std::make_move_iterator(end()), begin() + dist);
         --size_;
